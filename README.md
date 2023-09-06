@@ -6,7 +6,7 @@
 - Python 3
 - R >= 3.3.0
 - IRACE (R package) = 2.4
-
+- AMPL Python interface ([https://amplpy.readthedocs.io/en/latest/getting-started.html]) = 0.12.0
 ## Python Packages
 
 - argparse
