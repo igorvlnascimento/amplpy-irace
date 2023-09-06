@@ -18,6 +18,10 @@
 ###########main####################################################################
 EXE=../main.py
 
+# You have to change this configuration to change the model ans data files to use with irace
+MOD_FILE=../models/pi_hybrids.mod
+DAT_MOD_FILE=../models/pi_hybrids.dat
+
 
 CONFIG_ID=$1
 INSTANCE_ID=$2
@@ -42,7 +46,7 @@ touch ${DAT_FILE}
 #python -m scoop $EXE -v ${CONFIG_PARAMS} --datfile ${DAT_FILE} > ${LOGS} 2>&1
 #echo $EXE $*
 #python $EXE -v ${CONFIG_PARAMS}
-python $EXE -v ${CONFIG_PARAMS} --datfile ${DAT_FILE} > ${LOGS} 2>&1
+python $EXE --mod ${MOD_FILE} --dat ${DAT_MOD_FILE} -v ${CONFIG_PARAMS} --datfile ${DAT_FILE} > ${LOGS} 2>&1
 
 error() {
     echo "`TZ=UTC date`: error: $@"
