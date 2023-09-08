@@ -14,15 +14,12 @@ def main(MOD_FILE, DAT_FILE, INTTOL, GAP, GAPABS, DATFILE):
 	ampl = AMPL()
 	ampl.read(MOD_FILE)
 	ampl.read_data(DAT_FILE)
-	# tickers, cov_matrix = # ... pre-process data in Python
-	# ampl.set["A"] = tickers
-	# ampl.param["S"] = pd.DataFrame(
-	# 	cov_matrix, index=tickers, columns=tickers
-	# )
+	
 	ampl.option["solver"] = "gurobi"
 	ampl.option["gurobi_options"] = f"mipgap={GAP}, mipgapabs={GAPABS}, inttol={INTTOL}"
 	ampl.solve()
 
+	# The objective name need to change if the objective name is not Total_Cost
 	score = ampl.get_objective('Total_Cost').value()
 
 	# save the fo values in DATFILE
