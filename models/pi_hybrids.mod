@@ -4,8 +4,8 @@ set H;
 set R;
 
 # Variáveis
-var X { f in F, h in H } integer;
-var Y { f in F, h in H, r in R } integer;
+var X { f in F, h in H } integer >= 0;
+var Y { f in F, h in H, r in R } integer >= 0;
 
 # Parâmetros
 param p {f in F, h in H};

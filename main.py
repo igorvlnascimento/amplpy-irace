@@ -4,12 +4,6 @@ import sys
 from amplpy import AMPL
 
 def main(MOD_FILE, DAT_FILE, INTTOL, GAP, GAPABS, DATFILE):
-	# just a test
-	# score = MUTPB*POP/100
-	# score = float(score)
-	# score = score - float(CXPB)
-	# if score < 0:
-	# 	score = 0
 
 	ampl = AMPL()
 	ampl.read(MOD_FILE)
