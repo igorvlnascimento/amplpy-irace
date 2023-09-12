@@ -21,5 +21,5 @@ minimize Total_Cost:
 	
 # Restrições
 subject to Capacity {f in F}: sum {h in H} a[h] * X[f, h] <= u[f];
-subject to Demands {h in H, r in R}: sum {f in F} Y[f, h, r] <= d[h, r];
+subject to Demands {h in H, r in R}: sum {f in F} Y[f, h, r] >= d[h, r];
 subject to Balance {f in F, h in H}: sum {r in R} Y[f, h, r] <= X[f, h];
